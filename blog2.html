@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog 2</title>
+    <style>
+        .blog1{
+        background-color: black;
+    }
+    .interactions{
+        color: lightgreen;
+        padding-top: 3%;
+        text-align: center;
+        font-size: x-large;
+    }
+    .interactions button{
+        background-color: transparent;
+        color: white;
+        font-size: x-large;
+    }
+    p{
+        color: white;
+    }
+    </style>
+    <script>
+        function likePost(button) {
+            var likeCount = button.nextElementSibling;
+            var currentCount = parseInt(likeCount.textContent);
+            var newCount = currentCount === 0 ? 1 : 0; // Toggle between 0 and 1
+            likeCount.textContent = newCount;
+
+            // Change button text based on like count
+            button.textContent = newCount === 0 ? 'Like' : 'Unlike';
+        }
+
+        // Function to post comment
+        function postComment(button) {
+            var textarea = button.previousElementSibling;
+            var comment = textarea.value;
+            if (comment.trim() !== '') {
+                var commentsSection = button.parentElement;
+                var commentList = document.createElement('div');
+                commentList.textContent = comment;
+                commentsSection.appendChild(commentList);
+                textarea.value = '';
+            }
+        }
+    </script>
+
+</head>
+<body class="blog1">
+    <div style="display: flex; flex-direction: column; align-items: center;  border: 2px none; font-size: x-large; text-align: center;">
+    <h2 style="color: white;"> Subash Chandra Bose</h2>
+    <p>Subash Chandra Bose was a prominent Indian nationalist leader who fought valiantly for India's independence against British rule. Born on January 23, 1897, in Cuttack, Odisha, Bose was deeply inspired by the teachings of Swami Vivekananda and Mahatma Gandhi.
+    Bose played a pivotal role in the Indian National Congress during the 1920s and 1930s, advocating for complete independence from British rule through non-violent means. However, disillusioned by the Congress' approach, he later formed the Forward Bloc and advocated for a more aggressive stance against the British.
+    One of Bose's most significant contributions to India's freedom struggle was his establishment of the Indian National Army (INA) in 1942. Under his leadership, the INA allied with the Axis powers during World War II and waged war against the British in India.
+    Bose's famous slogan "Give me blood, and I shall give you freedom" inspired thousands of Indians to join the struggle for independence. Despite facing numerous challenges and setbacks, Bose remained undeterred in his quest for freedom.
+    Though Bose's mysterious disappearance in 1945 remains a subject of debate and speculation, his legacy as a fearless freedom fighter and patriot continues to inspire generations of Indians.
+    Subash Chandra Bose will always be remembered as one of the towering figures in India's struggle for independence, whose courage and determination inspired millions to dream of a free and sovereign nation.</p>
+        </div>
+    <div class="interactions" >
+        <button onclick="likePost(this)">Like</button>
+        <span class="like-count">0</span>
+    </div>
+    <div class="interactions">
+        <h5 style="color: lightgreen; font-size: large;">Comments</h5>
+        <textarea placeholder="Write a comment..."></textarea>
+        <br>
+        <br>
+        <button onclick="postComment(this)">Post</button>
+    </div>
+</div>
+</body>
+</html>

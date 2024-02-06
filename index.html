@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jaswanth Reddy</title>
+    <link rel="stylesheet" href="1.css">
+    <script>
+        function toggleDarkMode() {
+    document.body.classList.toggle('dark-theme');
+    toggleAnimation();
+}
+
+function toggleAnimation() {
+    const isDarkMode = document.body.classList.contains('dark-theme');
+    const h3Elements = document.querySelectorAll('h3');
+
+    h3Elements.forEach((h3) => {
+        h3.classList.remove('animated-h3');
+        void h3.offsetWidth; // Trigger reflow to restart the animation
+        h3.classList.add('animated-h3', isDarkMode);
+    });
+}
+
+
+    </script>
+  </head>
+<body>
+    <div style="margin: o;">
+        <nav>
+            <ul class="navbar">
+                <li ><a href="#AboutMe">About Me</a></li>
+                <li><a href="#EducationBackground">Education Background</a></li>
+                <li><a href="#Achievements">Achievements  </a></li>
+                <li style="padding:0 1% 0 1%;"><a href="#Skills">Skills  </a></li>
+                <li><a href="#Blog">Blog </a></li>
+                <button id="themeToggle" onclick="toggleDarkMode()">Change Theme</button>
+            </ul>
+        </nav>
+    </div>
+    <div class="maindiv">
+        <section id="AboutMe">
+        <div class="contentdiv">
+            <h3>AboutMe</h3>
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                <div style="padding-top: 8%;"><p> I am <b style="font-family: sans-serif;" >JASWANTH REDDY</b>, currently pursuing BTech in CSE at IIIT-H.I'm really into studying, and coding. I enjoy the balance between coding, hitting the books, and playing sports.</p>
+                </div>
+                <div>
+            </div>
+            <div style="padding-left: 10%;">
+                <img src="WhatsApp Image 2024-02-04 at 19.09.29.jpeg" alt="My pic" style="width: 100%; border-radius: 15%;">
+            </div>
+        </div>
+            </div>
+        </section>
+        <section id="EducationBackground">
+        <div class="contentdiv">
+            <h3>EducationBackground</h3>
+                <p>I finished my 10th grade at WiseWoods International School in Gudivada, Andhra Pradesh, following the CBSE curriculum. Then, I did my 12th at Narayana College in Hyderabad under the state board. Now, I'm currently grinding through B.Tech in Computer Science and Engineering at IIIT-H. Most of my schooling happened in boarding, juggling between different boards and cities. It's been a rollercoaster of experiences and always enjoyed challenges through out my education.</p>
+              </section>    
+        </div>
+        <section id="Achievements">
+        <div class="contentdiv">
+            <h3>Achievements</h3>
+                <p>There aren't much achievements but I take pride in my academic journey, where diligence and a passion for learning have been my guiding forces. Securing a 91.6% in my 10th grade  and an outstanding 98.8% in my 12th grade xmilestones that reflect my commitment to excellence. Additionally, I successfully navigated the challenges of competitive exams, achieving a remarkable 99.97 percentile with a 419 rank in JEE Mains and securing the 2534th rank in JEE Advanced. As I continue my B.Tech journey at IIIT-H, I am excited to leverage these foundations to explore new horizons in the field of Computer Science and Engineering</p>
+              </section>
+        </div>
+        <section id="Skills">
+        <div class="contentdiv">
+                <div>
+                  <h3>Skills</h3>
+                  <ul>
+                   <li>C language</li><br>  
+                   <li>Data structures and algorithms</li><br>
+                   <li>HTML</li><br>
+                   <li>CSS</li><br>
+                  </ul>
+                </div>
+              </section>
+        </div>
+        <section id="Blog">
+        <div class="contentdiv">
+            <h3>Blog</h3>
+            <div class="blog-post">
+                <h4><a href="blog1.html" target="_blank">Blog 1</a></h4>
+                <h4><a href="blog2.html" target="_blank">Blog 2</a></h4>
+                </div>
+            </div>
+              </section>
+            </div>
+        <div class="contentdiv">
+            <h3>Links</h3>
+            <br>
+            <span>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="git icon.png" alt="GitHub Icon" height="100px" width="100px" class="trans">
+                </a>
+            </span>
+            <span>
+                <a href="mailto:jaswanthreddy.konapalli@gmail.com">
+                    <img src="mail icon.png" alt="Email Icon" height="100px" width="100px"  class="trans">
+                </a>
+            </span>
+            <span>
+                <a href="https://www.facebook.com/jaswanthreddy.konapalli?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
+                    <img src="facebook icon.png" alt="Facebook Icon" height="100px" width="100px"  class="trans" >
+                </a>
+            </span>
+            <br>
+            <br>
+            <br>    
+            <a href="inspirational_quote.png" style="color: red;">Open Quote from local system</a>         
+        </div>
+    </div>
+
+</body>
+</html>
+

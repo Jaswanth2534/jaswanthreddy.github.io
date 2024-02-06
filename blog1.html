@@ -1,0 +1,76 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog 1</title>
+    <style>
+        .blog1{
+        background-color: black;
+    }
+    .interactions{
+        color: lightgreen;
+        padding-top: 3%;
+        text-align: center;
+        font-size: x-large;
+    }
+    .interactions button{
+        background-color: transparent;  
+        color: white;
+        font-size: x-large;
+    }
+    p{
+        color: white;
+    }
+    .comments {
+    color: lightgreen;
+}
+
+    </style>
+    <script>
+        function likePost(button) {
+        var likeCount = button.nextElementSibling;
+        var currentCount = parseInt(likeCount.textContent);
+        var newCount = currentCount === 0 ? 1 : 0; // Toggle between 0 and 1
+        likeCount.textContent = newCount;
+        button.textContent = newCount === 0 ? 'Like' : 'Unlike';
+    }
+
+    function postComment(button) {
+        var textarea = button.previousElementSibling;
+        var comment = textarea.value;
+        if (comment.trim() !== '') {
+            var commentsSection = button.parentElement;
+            var commentList = document.createElement('div');
+            commentList.textContent = comment;
+            var interactionsSection = commentsSection.parentElement.querySelector('.interactions.likes');
+            interactionsSection.appendChild(commentList);
+            textarea.value = '';
+        }
+    }
+    </script>
+
+</head>
+<body class="blog1">
+    <div style="display: flex; flex-direction: column; align-items: center;  border: 2px none; font-size: x-large; text-align: center;">
+    <h2 style="color: white;">Swami Vivekananda</h2>
+    <p>Swami Vivekananda, born Narendranath Datta, was a revered spiritual leader and philosopher of India. Born on January 12, 1863, in Calcutta, Swami Vivekananda was a key figure in the revival of Hinduism in India and the spread of its teachings to the Western world.
+    Vivekananda's teachings were deeply rooted in the philosophy of Vedanta, emphasizing the importance of self-realization and the unity of all beings. He believed in the inherent divinity of every individual and stressed the need for spiritual growth and service to humanity.
+    One of Vivekananda's most significant contributions was his speech at the World's Parliament of Religions in Chicago in 1893, where he eloquently spoke about the universality of religion and the harmony of different faiths. His famous opening words, "Sisters and brothers of America," captivated the audience and earned him widespread acclaim.
+    Vivekananda's message of tolerance, acceptance, and universal love resonated with people around the world, earning him the title of "Messenger of Indian wisdom to the Western world." He founded the Ramakrishna Mission and the Ramakrishna Math, institutions dedicated to the service of humanity and the promotion of spiritual values.
+    Throughout his life, Swami Vivekananda worked tirelessly to uplift the downtrodden and inspire others to realize their full potential. His teachings continue to inspire millions of people worldwide, guiding them on the path of self-discovery and spiritual fulfillment.
+    Swami Vivekananda's legacy remains evergreen, reminding us of the timeless wisdom of India's ancient spiritual traditions and the enduring power of love, compassion, and selflessness.</p>
+        </div>
+    <div class="interactions" >
+        <button onclick="likePost(this)">Like</button>
+        <span class="like-count">0</span>
+    </div>
+    <div class="interactions">
+        <h5 style="color: lightgreen; font-size: large;">Comments</h5>
+        <textarea placeholder="Write a comment..."></textarea>
+        <br>
+        <br>
+        <button onclick="postComment(this)">Post</button>
+    </div>    
+</div>
+</body>
+</html>
